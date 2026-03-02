@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Master Shift Table</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#3994ef",
+                        "background-light": "#f6f7f8",
+                        "background-dark": "#101922",
+                    },
+                    fontFamily: {
+                        "display": ["Inter"]
+                    },
+                    borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<style>
+        .no-scrollbar::-webkit-scrollbar { display: none; }
+        .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+        .sticky-col { position: sticky; left: 0; z-index: 10; }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark font-display text-slate-900 dark:text-slate-100">
+<div class="relative flex h-auto min-h-screen w-full flex-col overflow-x-hidden">
+<header class="flex items-center bg-background-light dark:bg-background-dark p-4 pb-2 justify-between border-b border-slate-200 dark:border-slate-800">
+<div class="text-slate-900 dark:text-slate-100 flex size-12 shrink-0 items-center">
+<span class="material-symbols-outlined cursor-pointer">arrow_back</span>
+</div>
+<h2 class="text-slate-900 dark:text-slate-100 text-lg font-bold leading-tight tracking-[-0.015em] flex-1 text-center">Master Shift Table</h2>
+<div class="flex w-12 items-center justify-end">
+<button class="flex items-center justify-center rounded-lg h-12 bg-transparent text-slate-900 dark:text-slate-100">
+<span class="material-symbols-outlined">search</span>
+</button>
+</div>
+</header>
+<div class="px-4 pt-5">
+<div class="flex items-center justify-between mb-3">
+<h2 class="text-slate-900 dark:text-slate-100 text-[22px] font-bold leading-tight tracking-[-0.015em]">September 2023</h2>
+<div class="flex gap-2">
+<button class="p-2 rounded-lg bg-slate-200 dark:bg-slate-800"><span class="material-symbols-outlined text-sm">chevron_left</span></button>
+<button class="p-2 rounded-lg bg-slate-200 dark:bg-slate-800"><span class="material-symbols-outlined text-sm">chevron_right</span></button>
+</div>
+</div>
+</div>
+<div class="pb-3">
+<div class="flex border-b border-slate-200 dark:border-slate-800 px-4 gap-8 overflow-x-auto no-scrollbar">
+<a class="flex flex-col items-center justify-center border-b-[3px] border-primary text-primary pb-[13px] pt-4 whitespace-nowrap" href="#">
+<p class="text-sm font-bold leading-normal tracking-[0.015em]">All Teams</p>
+</a>
+<a class="flex flex-col items-center justify-center border-b-[3px] border-transparent text-slate-500 dark:text-slate-400 pb-[13px] pt-4 whitespace-nowrap" href="#">
+<p class="text-sm font-bold leading-normal tracking-[0.015em]">Kitchen</p>
+</a>
+<a class="flex flex-col items-center justify-center border-b-[3px] border-transparent text-slate-500 dark:text-slate-400 pb-[13px] pt-4 whitespace-nowrap" href="#">
+<p class="text-sm font-bold leading-normal tracking-[0.015em]">Service</p>
+</a>
+<a class="flex flex-col items-center justify-center border-b-[3px] border-transparent text-slate-500 dark:text-slate-400 pb-[13px] pt-4 whitespace-nowrap" href="#">
+<p class="text-sm font-bold leading-normal tracking-[0.015em]">Management</p>
+</a>
+</div>
+</div>
+<div class="flex gap-3 p-3 overflow-x-auto no-scrollbar">
+<button class="flex h-8 shrink-0 items-center justify-center gap-x-2 rounded-lg bg-primary/10 border border-primary/20 px-3">
+<div class="w-3 h-3 rounded-full bg-amber-400"></div>
+<p class="text-slate-900 dark:text-slate-100 text-xs font-medium">Morning</p>
+</button>
+<button class="flex h-8 shrink-0 items-center justify-center gap-x-2 rounded-lg bg-primary/10 border border-primary/20 px-3">
+<div class="w-3 h-3 rounded-full bg-primary"></div>
+<p class="text-slate-900 dark:text-slate-100 text-xs font-medium">Afternoon</p>
+</button>
+<button class="flex h-8 shrink-0 items-center justify-center gap-x-2 rounded-lg bg-primary/10 border border-primary/20 px-3">
+<div class="w-3 h-3 rounded-full bg-purple-500"></div>
+<p class="text-slate-900 dark:text-slate-100 text-xs font-medium">Night</p>
+</button>
+<button class="flex h-8 shrink-0 items-center justify-center gap-x-2 rounded-lg bg-primary/10 border border-primary/20 px-3">
+<div class="w-3 h-3 rounded-full bg-slate-300 dark:bg-slate-600"></div>
+<p class="text-slate-900 dark:text-slate-100 text-xs font-medium">Off</p>
+</button>
+</div>
+<div class="flex-1 overflow-hidden flex flex-col">
+<div class="overflow-auto flex-1 relative">
+<table class="w-full border-collapse">
+<thead>
+<tr class="bg-slate-100 dark:bg-slate-900/50">
+<th class="sticky-col bg-slate-100 dark:bg-slate-900 p-3 text-left text-xs font-bold uppercase tracking-wider text-slate-500 border-r border-slate-200 dark:border-slate-800 min-w-[120px]">Member</th>
+<!-- Generate Day Headers -->
+<th class="p-2 text-center text-xs font-bold text-slate-500 border-r border-slate-200 dark:border-slate-800 min-w-[40px]">01<br/><span class="font-normal opacity-70">Fri</span></th>
+<th class="p-2 text-center text-xs font-bold text-slate-500 border-r border-slate-200 dark:border-slate-800 min-w-[40px] bg-primary/5">02<br/><span class="font-normal opacity-70">Sat</span></th>
+<th class="p-2 text-center text-xs font-bold text-slate-500 border-r border-slate-200 dark:border-slate-800 min-w-[40px] bg-red-500/5">03<br/><span class="font-normal opacity-70 text-red-500">Sun</span></th>
+<th class="p-2 text-center text-xs font-bold text-slate-500 border-r border-slate-200 dark:border-slate-800 min-w-[40px]">04<br/><span class="font-normal opacity-70">Mon</span></th>
+<th class="p-2 text-center text-xs font-bold text-slate-500 border-r border-slate-200 dark:border-slate-800 min-w-[40px]">05<br/><span class="font-normal opacity-70">Tue</span></th>
+<th class="p-2 text-center text-xs font-bold text-slate-500 border-r border-slate-200 dark:border-slate-800 min-w-[40px]">06<br/><span class="font-normal opacity-70">Wed</span></th>
+<th class="p-2 text-center text-xs font-bold text-slate-500 border-r border-slate-200 dark:border-slate-800 min-w-[40px]">07<br/><span class="font-normal opacity-70">Thu</span></th>
+<th class="p-2 text-center text-xs font-bold text-slate-500 border-r border-slate-200 dark:border-slate-800 min-w-[40px]">08<br/><span class="font-normal opacity-70">Fri</span></th>
+<th class="p-2 text-center text-xs font-bold text-slate-500 border-r border-slate-200 dark:border-slate-800 min-w-[40px] bg-primary/5">09<br/><span class="font-normal opacity-70">Sat</span></th>
+<th class="p-2 text-center text-xs font-bold text-slate-500 border-r border-slate-200 dark:border-slate-800 min-w-[40px] bg-red-500/5">10<br/><span class="font-normal opacity-70 text-red-500">Sun</span></th>
+<th class="p-2 text-center text-xs font-bold text-slate-500 border-r border-slate-200 dark:border-slate-800 min-w-[40px]">11<br/><span class="font-normal opacity-70">Mon</span></th>
+</tr>
+</thead>
+<tbody class="divide-y divide-slate-200 dark:divide-slate-800">
+<!-- Row 1 -->
+<tr class="hover:bg-slate-50 dark:hover:bg-slate-800/50">
+<td class="sticky-col bg-white dark:bg-background-dark p-3 border-r border-slate-200 dark:border-slate-800">
+<div class="flex items-center gap-2">
+<div class="w-8 h-8 rounded-full bg-primary/20 flex items-center justify-center overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="Portrait of a male staff member" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCW9435UfnN8jK14KDMwLGlghMmogW1aqMrwMASEfdDWkC0rRxF5ZP-pX-8Z6rHcpM4PSXlw5DCGsy2HBg79cHh1c2dRkR6-cMOPVbOMdS55yHIfCVnIxDn1kPPnJYkC8OG1h_PAYiu_midOLxZnFJ6OvsZp0oeP5Y9tJNuKDU946OlcGpx_I5FUyj-RcnrO-sBYtJakV3B3-MDUJSLS3MqUonOYlUAtuWQ4nZUWtZGhuhXQbqZs6ZwF3OiIJNhcnKsHeYt9PPVhCg"/>
+</div>
+<span class="text-sm font-semibold truncate">Alex Rivera</span>
+</div>
+</td>
+<td class="p-2 text-center border-r border-slate-200 dark:border-slate-800"><span class="material-symbols-outlined text-amber-400">light_mode</span></td>
+<td class="p-2 text-center border-r border-slate-200 dark:border-slate-800 bg-primary/5"><span class="material-symbols-outlined text-amber-400">light_mode</span></td>
+<td class="p-2 text-center border-r border-slate-200 dark:border-slate-800 bg-red-500/5"><span class="material-symbols-outlined text-slate-300 dark:text-slate-600">block</span></td>
+<td class="p-2 text-center border-r border-slate-200 dark:border-slate-800"><span class="material-symbols-outlined text-primary">wb_sunny</span></td>
+<td class="p-2 text-center border-r border-slate-200 dark:border-slate-800"><span class="material-symbols-outlined text-primary">wb_sunny</span></td>
+<td class="p-2 text-center border-r border-slate-200 dark:border-slate-800"><span class="material-symbols-outlined text-purple-500">dark_mode</span></td>
+<td class="p-2 text-center border-r border-slate-200 dark:border-slate-800"><span class="material-symbols-outlined text-purple-500">dark_mode</span></td>
+<td class="p-2 text-center border-r border-slate-200 dark:border-slate-800"><span class="material-symbols-outlined text-slate-300 dark:text-slate-600">block</span></td>
+<td class="p-2 text-center border-r border-slate-200 dark:border-slate-800 bg-primary/5"><span class="material-symbols-outlined text-amber-400">light_mode</span></td>
+<td class="p-2 text-center border-r border-slate-200 dark:border-slate-800 bg-red-500/5"><span class="material-symbols-outlined text-amber-400">light_mode</span></td>
+<td class="p-2 text-center border-r border-slate-200 dark:border-slate-800"><span class="material-symbols-outlined text-primary">wb_sunny</span></td>
+</tr>
+<!-- Row 2 -->
+<tr class="hover:bg-slate-50 dark:hover:bg-slate-800/50">
+<td class="sticky-col bg-white dark:bg-background-dark p-3 border-r border-slate-200 dark:border-slate-800">
+<div class="flex items-center gap-2">
+<div class="w-8 h-8 rounded-full bg-primary/20 flex items-center justify-center overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="Portrait of a female staff member" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDrY1zVDVZViBGdX_IX1VO_RIsPQpAEGgfLZRNJWXS3zKnoZ42XB3TXYmxcAQkbZkQ32PrWuyG33yXfWOkexNFPz6VZj0tBae7zPeXjBY4OtkA6kBxFZWC5iMjKoSd0Y7QMlsKrvfIFEAw0F28IcyQmlDUFHV6P_ntxG-qK5659EK0V4kAUJcA53ie5AE3Tht_g5-dhqYPl2erv4CeCQZscQ_xNa_OjBFDr0F0QTW7U-FHMnq2ip8bKekMLrNBTCi_W5xSce8cXYsI"/>
+</div>
+<span class="text-sm font-semibold truncate">Sarah Chen</span>
+</div>
+</td>
+<td class="p-2 text-center border-r border-slate-200 dark:border-slate-800"><span class="material-symbols-outlined text-purple-500">dark_mode</span></td>
+<td class="p-2 text-center border-r border-slate-200 dark:border-slate-800 bg-primary/5"><span class="material-symbols-outlined text-slate-300 dark:text-slate-600">block</span></td>
+<td class="p-2 text-center border-r border-slate-200 dark:border-slate-800 bg-red-500/5"><span class="material-symbols-outlined text-primary">wb_sunny</span></td>
+<td class="p-2 text-center border-r border-slate-200 dark:border-slate-800"><span class="material-symbols-outlined text-primary">wb_sunny</span></td>
+<td class="p-2 text-center border-r border-slate-200 dark:border-slate-800"><span class="material-symbols-outlined text-amber-400">light_mode</span></td>
+<td class="p-2 text-center border-r border-slate-200 dark:border-slate-800"><span class="material-symbols-outlined text-amber-400">light_mode</span></td>
+<td class="p-2 text-center border-r border-slate-200 dark:border-slate-800"><span class="material-symbols-outlined text-slate-300 dark:text-slate-600">block</span></td>
+<td class="p-2 text-center border-r border-slate-200 dark:border-slate-800"><span class="material-symbols-outlined text-purple-500">dark_mode</span></td>
+<td class="p-2 text-center border-r border-slate-200 dark:border-slate-800 bg-primary/5"><span class="material-symbols-outlined text-purple-500">dark_mode</span></td>
+<td class="p-2 text-center border-r border-slate-200 dark:border-slate-800 bg-red-500/5"><span class="material-symbols-outlined text-primary">wb_sunny</span></td>
+<td class="p-2 text-center border-r border-slate-200 dark:border-slate-800"><span class="material-symbols-outlined text-primary">wb_sunny</span></td>
+</tr>
+<!-- Row 3 -->
+<tr class="hover:bg-slate-50 dark:hover:bg-slate-800/50">
+<td class="sticky-col bg-white dark:bg-background-dark p-3 border-r border-slate-200 dark:border-slate-800">
+<div class="flex items-center gap-2">
+<div class="w-8 h-8 rounded-full bg-primary/20 flex items-center justify-center overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="Portrait of a chef member" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBqqjtY91gkp5lHWnzW6OHfeJ6Hr7SZ_D3v3QEarFJbgGtzK8coptKMQyU908e69zjy2E127c9_VdG5-uWJoJY0NHXH0ir2Sbqcl8iK547w6UfskhRrul3Ejf-5RvV6KWuszXajRr-zSreHX7uNjjQuRhiVixpPVAQERQgHs3B0GEu9rItB-JqOjC2cjmQMnzg8Fun2JUdsxf4De1BYmuTi46-5uXR_qi-eXyRh1xgTTJ-fzpI9DK9oqr6vTRnE_0qjUQUd6mNmzCA"/>
+</div>
+<span class="text-sm font-semibold truncate">James Wilson</span>
+</div>
+</td>
+<td class="p-2 text-center border-r border-slate-200 dark:border-slate-800"><span class="material-symbols-outlined text-slate-300 dark:text-slate-600">block</span></td>
+<td class="p-2 text-center border-r border-slate-200 dark:border-slate-800 bg-primary/5"><span class="material-symbols-outlined text-purple-500">dark_mode</span></td>
+<td class="p-2 text-center border-r border-slate-200 dark:border-slate-800 bg-red-500/5"><span class="material-symbols-outlined text-purple-500">dark_mode</span></td>
+<td class="p-2 text-center border-r border-slate-200 dark:border-slate-800"><span class="material-symbols-outlined text-amber-400">light_mode</span></td>
+<td class="p-2 text-center border-r border-slate-200 dark:border-slate-800"><span class="material-symbols-outlined text-amber-400">light_mode</span></td>
+<td class="p-2 text-center border-r border-slate-200 dark:border-slate-800"><span class="material-symbols-outlined text-primary">wb_sunny</span></td>
+<td class="p-2 text-center border-r border-slate-200 dark:border-slate-800"><span class="material-symbols-outlined text-primary">wb_sunny</span></td>
+<td class="p-2 text-center border-r border-slate-200 dark:border-slate-800"><span class="material-symbols-outlined text-slate-300 dark:text-slate-600">block</span></td>
+<td class="p-2 text-center border-r border-slate-200 dark:border-slate-800 bg-primary/5"><span class="material-symbols-outlined text-purple-500">dark_mode</span></td>
+<td class="p-2 text-center border-r border-slate-200 dark:border-slate-800 bg-red-500/5"><span class="material-symbols-outlined text-purple-500">dark_mode</span></td>
+<td class="p-2 text-center border-r border-slate-200 dark:border-slate-800"><span class="material-symbols-outlined text-amber-400">light_mode</span></td>
+</tr>
+<!-- Row 4 -->
+<tr class="hover:bg-slate-50 dark:hover:bg-slate-800/50">
+<td class="sticky-col bg-white dark:bg-background-dark p-3 border-r border-slate-200 dark:border-slate-800">
+<div class="flex items-center gap-2">
+<div class="w-8 h-8 rounded-full bg-primary/20 flex items-center justify-center overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="Portrait of a female service staff" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCMqOr_sbo5CaABlvhnL1tEQ18W2H0LLkkh6TCprigrEcfyCHPoRj10hbIgcKhRE74jiOyUZE5VzEK2awm1FZcsrqDJr9d0tdMkOd5WBzgg50pKW5ZDC7UD9vrYcBbZHa-zLUSgmsKnYcpP-SGCUPaLwsr1XEEbcMlgiAzheVLqOc9_SLV6Vwdo1d7DbjfImKP6Zvu6IyxMtZwbcQpUB4lWHPoR13cEyo__h47S_35QETM4IhxB3c-qbc-_RcVFXsL5AestlryJRgA"/>
+</div>
+<span class="text-sm font-semibold truncate">Maria Garcia</span>
+</div>
+</td>
+<td class="p-2 text-center border-r border-slate-200 dark:border-slate-800"><span class="material-symbols-outlined text-primary">wb_sunny</span></td>
+<td class="p-2 text-center border-r border-slate-200 dark:border-slate-800 bg-primary/5"><span class="material-symbols-outlined text-primary">wb_sunny</span></td>
+<td class="p-2 text-center border-r border-slate-200 dark:border-slate-800 bg-red-500/5"><span class="material-symbols-outlined text-amber-400">light_mode</span></td>
+<td class="p-2 text-center border-r border-slate-200 dark:border-slate-800"><span class="material-symbols-outlined text-slate-300 dark:text-slate-600">block</span></td>
+<td class="p-2 text-center border-r border-slate-200 dark:border-slate-800"><span class="material-symbols-outlined text-purple-500">dark_mode</span></td>
+<td class="p-2 text-center border-r border-slate-200 dark:border-slate-800"><span class="material-symbols-outlined text-purple-500">dark_mode</span></td>
+<td class="p-2 text-center border-r border-slate-200 dark:border-slate-800"><span class="material-symbols-outlined text-amber-400">light_mode</span></td>
+<td class="p-2 text-center border-r border-slate-200 dark:border-slate-800"><span class="material-symbols-outlined text-amber-400">light_mode</span></td>
+<td class="p-2 text-center border-r border-slate-200 dark:border-slate-800 bg-primary/5"><span class="material-symbols-outlined text-slate-300 dark:text-slate-600">block</span></td>
+<td class="p-2 text-center border-r border-slate-200 dark:border-slate-800 bg-red-500/5"><span class="material-symbols-outlined text-primary">wb_sunny</span></td>
+<td class="p-2 text-center border-r border-slate-200 dark:border-slate-800"><span class="material-symbols-outlined text-primary">wb_sunny</span></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<nav class="flex border-t border-slate-200 dark:border-slate-800 bg-background-light dark:bg-background-dark px-4 pb-3 pt-2">
+<a class="flex flex-1 flex-col items-center justify-end gap-1 text-slate-500 dark:text-slate-400" href="#">
+<span class="material-symbols-outlined">home</span>
+<p class="text-xs font-medium leading-normal tracking-[0.015em]">Home</p>
+</a>
+<a class="flex flex-1 flex-col items-center justify-end gap-1 text-primary" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1">calendar_month</span>
+<p class="text-xs font-medium leading-normal tracking-[0.015em]">Schedule</p>
+</a>
+<a class="flex flex-1 flex-col items-center justify-end gap-1 text-slate-500 dark:text-slate-400" href="#">
+<span class="material-symbols-outlined">group</span>
+<p class="text-xs font-medium leading-normal tracking-[0.015em]">Team</p>
+</a>
+<a class="flex flex-1 flex-col items-center justify-end gap-1 text-slate-500 dark:text-slate-400" href="#">
+<span class="material-symbols-outlined">settings</span>
+<p class="text-xs font-medium leading-normal tracking-[0.015em]">Settings</p>
+</a>
+</nav>
+</div>
+</body></html>

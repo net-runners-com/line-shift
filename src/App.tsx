@@ -22,10 +22,15 @@ import { Loading } from '@/components/Loading/Loading';
 import type { Shift, ShiftPeriod } from '@/types/shift';
 import type { ShiftFormData } from '@/types/shift';
 import type { GroupMember } from '@/types/group';
+import { env } from '@/config/env';
+import { mockPeriods, mockShifts, mockMembers, MOCK_GROUP_ID, MOCK_USER_ID } from '@/data/mockData';
 import './App.css';
 
 export function App() {
-  const { isReady, isLoggedIn, userName, userId, groupId, error, login } = useLiff();
+  const { isReady, isLoggedIn, userName, userId: liffUserId, groupId: liffGroupId, error, login } = useLiff();
+  const useMock = env.useMockData;
+  const userId = useMock ? MOCK_USER_ID : liffUserId;
+  const groupId = useMock ? MOCK_GROUP_ID : liffGroupId;
   const [activeTab, setActiveTab] = useState<TabId>('calendar');
   const [selectedDate, setSelectedDate] = useState<Date | null>(null);
   const [registerInitialDate, setRegisterInitialDate] = useState<Date | undefined>();
@@ -71,16 +76,32 @@ export function App() {
 
   useEffect(() => {
     if (!isReady || !isLoggedIn) return;
+    if (useMock) return;
     refreshShifts();
-  }, [isReady, isLoggedIn, refreshShifts]);
+  }, [isReady, isLoggedIn, refreshShifts, useMock]);
 
   useEffect(() => {
+    if (useMock) {
+      setPeriods(mockPeriods);
+      setShifts(mockShifts);
+      setMembers(mockMembers);
+      if (mockPeriods.length > 0) setSelectedPeriod(mockPeriods[0] ?? null);
+      return;
+    }
     if (groupId && isLoggedIn) refreshPeriods();
-  }, [groupId, isLoggedIn, refreshPeriods]);
+  }, [groupId, isLoggedIn, refreshPeriods, useMock]);
 
   useEffect(() => {
+    if (useMock && selectedPeriod) {
+      const draft = mockShifts.filter(
+        (s) => s.periodId === selectedPeriod.id && s.status === 'draft'
+      );
+      setDraftShiftsInPeriod(draft);
+      setSubmittedForPeriod(false);
+      return;
+    }
     if (selectedPeriod) refreshDraftInPeriod();
-  }, [selectedPeriod, refreshDraftInPeriod, refreshShifts]);
+  }, [selectedPeriod, refreshDraftInPeriod, refreshShifts, useMock]);
 
   const handleAddShift = useCallback(
     async (data: ShiftFormData) => {
@@ -167,15 +188,20 @@ export function App() {
 
   const confirmedShifts = shifts.filter((s) => s.status === 'confirmed');
 
-  if (!isReady) {
+  if (!isReady && !useMock) {
     return <Loading message={error ?? '読み込み中...'} />;
   }
 
-  const needLogin = !isLoggedIn && !error;
+  const needLogin = !useMock && !isLoggedIn && !error;
 
   return (
     <div id="app">
-      <Header userName={userName} />
+      <Header userName={useMock ? '山田 太郎（テスト）' : userName} />
+      {useMock && (
+        <div className="mock-banner" role="status">
+          テストデータ表示中
+        </div>
+      )}
       <div className="container">
         <Tabs
           activeTab={activeTab}

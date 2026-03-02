@@ -20,4 +20,6 @@ export const env = {
   supabaseAnonKey: getEnv('VITE_SUPABASE_ANON_KEY'),
   /** Google OAuth 2.0 クライアント ID（スプレッドシート出力用） */
   googleClientId: getEnv('VITE_GOOGLE_CLIENT_ID'),
+  /** 開発用: true のときテストデータを表示（LIFF未ログイン時など） */
+  useMockData: import.meta.env.VITE_USE_MOCK_DATA === 'true',
 } as const;

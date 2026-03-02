@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+
+<html lang="ja"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#3994ef",
+                        "background-light": "#f6f7f8",
+                        "background-dark": "#101922",
+                    },
+                    fontFamily: {
+                        "display": ["Inter"]
+                    },
+                    borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<style>
+        body { font-family: 'Inter', sans-serif; }
+        .hide-scrollbar::-webkit-scrollbar { display: none; }
+        .hide-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark text-slate-900 dark:text-slate-100 font-display">
+<div class="flex flex-col h-screen max-w-full overflow-hidden">
+<!-- Header: Month Navigation -->
+<header class="bg-background-light dark:bg-background-dark border-b border-slate-200 dark:border-slate-800 px-4 py-3">
+<div class="flex items-center justify-between mb-4">
+<button class="p-2 hover:bg-slate-200 dark:hover:bg-slate-800 rounded-full transition-colors">
+<span class="material-symbols-outlined block">chevron_left</span>
+</button>
+<h1 class="text-lg font-bold tracking-tight">September 2023</h1>
+<button class="p-2 hover:bg-slate-200 dark:hover:bg-slate-800 rounded-full transition-colors">
+<span class="material-symbols-outlined block">chevron_right</span>
+</button>
+</div>
+<!-- Team Filters -->
+<div class="flex gap-2 overflow-x-auto hide-scrollbar pb-1">
+<button class="flex h-9 items-center justify-center gap-2 rounded-lg bg-primary text-white px-4 shrink-0 text-sm font-medium">
+                    All Teams
+                    <span class="material-symbols-outlined text-sm">expand_more</span>
+</button>
+<button class="flex h-9 items-center justify-center gap-2 rounded-lg bg-slate-200 dark:bg-slate-800 text-slate-700 dark:text-slate-300 px-4 shrink-0 text-sm font-medium">
+                    Kitchen
+                    <span class="material-symbols-outlined text-sm">expand_more</span>
+</button>
+<button class="flex h-9 items-center justify-center gap-2 rounded-lg bg-slate-200 dark:bg-slate-800 text-slate-700 dark:text-slate-300 px-4 shrink-0 text-sm font-medium">
+                    Service
+                    <span class="material-symbols-outlined text-sm">expand_more</span>
+</button>
+</div>
+</header>
+<!-- Shift Table Content -->
+<main class="flex-1 overflow-auto relative">
+<div class="min-w-max">
+<!-- Table Header: Dates -->
+<div class="sticky top-0 z-20 flex bg-slate-100 dark:bg-slate-900 border-b border-slate-200 dark:border-slate-800">
+<div class="w-32 sticky left-0 z-30 bg-slate-100 dark:bg-slate-900 border-r border-slate-200 dark:border-slate-800 p-3 text-xs font-bold text-slate-500 uppercase tracking-wider">
+                        Members
+                    </div>
+<div class="flex">
+<!-- Date Columns -->
+<div class="w-12 border-r border-slate-200 dark:border-slate-800 flex flex-col items-center justify-center py-2 bg-primary/10">
+<span class="text-[10px] font-bold text-primary">MON</span>
+<span class="text-sm font-bold text-slate-900 dark:text-slate-100">01</span>
+</div>
+<div class="w-12 border-r border-slate-200 dark:border-slate-800 flex flex-col items-center justify-center py-2">
+<span class="text-[10px] font-bold text-slate-500">TUE</span>
+<span class="text-sm font-bold text-slate-900 dark:text-slate-100">02</span>
+</div>
+<div class="w-12 border-r border-slate-200 dark:border-slate-800 flex flex-col items-center justify-center py-2">
+<span class="text-[10px] font-bold text-slate-500">WED</span>
+<span class="text-sm font-bold text-slate-900 dark:text-slate-100">03</span>
+</div>
+<div class="w-12 border-r border-slate-200 dark:border-slate-800 flex flex-col items-center justify-center py-2">
+<span class="text-[10px] font-bold text-slate-500">THU</span>
+<span class="text-sm font-bold text-slate-900 dark:text-slate-100">04</span>
+</div>
+<div class="w-12 border-r border-slate-200 dark:border-slate-800 flex flex-col items-center justify-center py-2">
+<span class="text-[10px] font-bold text-slate-500">FRI</span>
+<span class="text-sm font-bold text-slate-900 dark:text-slate-100">05</span>
+</div>
+<div class="w-12 border-r border-slate-200 dark:border-slate-800 flex flex-col items-center justify-center py-2 bg-slate-200/50 dark:bg-slate-800/50">
+<span class="text-[10px] font-bold text-blue-500">SAT</span>
+<span class="text-sm font-bold text-slate-900 dark:text-slate-100">06</span>
+</div>
+<div class="w-12 border-r border-slate-200 dark:border-slate-800 flex flex-col items-center justify-center py-2 bg-slate-200/50 dark:bg-slate-800/50">
+<span class="text-[10px] font-bold text-red-500">SUN</span>
+<span class="text-sm font-bold text-slate-900 dark:text-slate-100">07</span>
+</div>
+<!-- Repeated for visualization -->
+<div class="w-12 border-r border-slate-200 dark:border-slate-800 flex flex-col items-center justify-center py-2">
+<span class="text-[10px] font-bold text-slate-500">MON</span>
+<span class="text-sm font-bold text-slate-900 dark:text-slate-100">08</span>
+</div>
+<div class="w-12 border-r border-slate-200 dark:border-slate-800 flex flex-col items-center justify-center py-2">
+<span class="text-[10px] font-bold text-slate-500">TUE</span>
+<span class="text-sm font-bold text-slate-900 dark:text-slate-100">09</span>
+</div>
+<div class="w-12 border-r border-slate-200 dark:border-slate-800 flex flex-col items-center justify-center py-2">
+<span class="text-[10px] font-bold text-slate-500">WED</span>
+<span class="text-sm font-bold text-slate-900 dark:text-slate-100">10</span>
+</div>
+</div>
+</div>
+<!-- Table Body: Members & Shfits -->
+<div class="flex flex-col">
+<!-- Member Row 1 -->
+<div class="flex border-b border-slate-200 dark:border-slate-800 hover:bg-primary/5 transition-colors">
+<div class="w-32 sticky left-0 z-10 bg-background-light dark:bg-background-dark border-r border-slate-200 dark:border-slate-800 p-3 flex items-center gap-2">
+<div class="size-8 rounded-full bg-slate-300 dark:bg-slate-700 overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="Profile picture of John Doe" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAQtXBqDhlz1IHaCbgbDSn-IhgNuKS82zmdVUcvWxC7sLE0OKaYoNHMQRcwAoop5TgO3q7iEoJvBG_OtzQcZI2ucjJCGkuydrxJOVSzEqHtjsU6aZX-f3XEW-Tm_j2OK9uhz1UwwatXoKals_zCS-jwyjAGjPw61bBiPWx-dlGFA9sLaV-ME2eYmZlCo51QVuFJU0Nlq4ugbWPOuqW6NToZ1eEH88iX_u_8peNkIwGRpBzK18Yf52SGZkr_Vn6dYFmZ4ga5hWz5tk4"/>
+</div>
+<span class="text-xs font-semibold truncate">John Doe</span>
+</div>
+<div class="flex">
+<div class="w-12 h-14 border-r border-slate-200 dark:border-slate-800 flex items-center justify-center"><span class="material-symbols-outlined text-orange-400">light_mode</span></div>
+<div class="w-12 h-14 border-r border-slate-200 dark:border-slate-800 flex items-center justify-center"><span class="material-symbols-outlined text-orange-400">light_mode</span></div>
+<div class="w-12 h-14 border-r border-slate-200 dark:border-slate-800 flex items-center justify-center"><span class="material-symbols-outlined text-slate-300">block</span></div>
+<div class="w-12 h-14 border-r border-slate-200 dark:border-slate-800 flex items-center justify-center"><span class="material-symbols-outlined text-indigo-400">dark_mode</span></div>
+<div class="w-12 h-14 border-r border-slate-200 dark:border-slate-800 flex items-center justify-center"><span class="material-symbols-outlined text-indigo-400">dark_mode</span></div>
+<div class="w-12 h-14 border-r border-slate-200 dark:border-slate-800 flex items-center justify-center bg-slate-50 dark:bg-slate-800/20"><span class="material-symbols-outlined text-orange-400">light_mode</span></div>
+<div class="w-12 h-14 border-r border-slate-200 dark:border-slate-800 flex items-center justify-center bg-slate-50 dark:bg-slate-800/20"><span class="material-symbols-outlined text-slate-300">block</span></div>
+<div class="w-12 h-14 border-r border-slate-200 dark:border-slate-800 flex items-center justify-center"><span class="material-symbols-outlined text-orange-400">light_mode</span></div>
+<div class="w-12 h-14 border-r border-slate-200 dark:border-slate-800 flex items-center justify-center"><span class="material-symbols-outlined text-orange-400">light_mode</span></div>
+<div class="w-12 h-14 border-r border-slate-200 dark:border-slate-800 flex items-center justify-center"><span class="material-symbols-outlined text-orange-400">light_mode</span></div>
+</div>
+</div>
+<!-- Member Row 2 -->
+<div class="flex border-b border-slate-200 dark:border-slate-800 hover:bg-primary/5 transition-colors">
+<div class="w-32 sticky left-0 z-10 bg-background-light dark:bg-background-dark border-r border-slate-200 dark:border-slate-800 p-3 flex items-center gap-2">
+<div class="size-8 rounded-full bg-slate-300 dark:bg-slate-700 overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="Profile picture of Sarah Smith" src="https://lh3.googleusercontent.com/aida-public/AB6AXuASCB1nO5TxEqQOe5zuS_RKc4IvVDgosKaCSd76eDXtPaO5rNCzmBuClt9iNVumAIBgWgR1QBiFsSyMh8TdFj1MJ0WWETBQVKvDRo2CEqeAd1Wnto_LZkdvRVSbOVX1fNdhJufrAclCb7x7BbUaKTnOrD05TvJ05F7DYuFpp1mVGZ4_jUTaQbTxO8Kxn2ktaV-9WQOT6bpDjPnfM9mQT2iK1l9_pyj2qj7Av1ftnzQBPaOi9545pSckPpo_-PsXgosXMUex-G5pnMk"/>
+</div>
+<span class="text-xs font-semibold truncate">Sarah Smith</span>
+</div>
+<div class="flex">
+<div class="w-12 h-14 border-r border-slate-200 dark:border-slate-800 flex items-center justify-center"><span class="material-symbols-outlined text-indigo-400">dark_mode</span></div>
+<div class="w-12 h-14 border-r border-slate-200 dark:border-slate-800 flex items-center justify-center"><span class="material-symbols-outlined text-indigo-400">dark_mode</span></div>
+<div class="w-12 h-14 border-r border-slate-200 dark:border-slate-800 flex items-center justify-center"><span class="material-symbols-outlined text-indigo-400">dark_mode</span></div>
+<div class="w-12 h-14 border-r border-slate-200 dark:border-slate-800 flex items-center justify-center"><span class="material-symbols-outlined text-slate-300">block</span></div>
+<div class="w-12 h-14 border-r border-slate-200 dark:border-slate-800 flex items-center justify-center"><span class="material-symbols-outlined text-slate-300">block</span></div>
+<div class="w-12 h-14 border-r border-slate-200 dark:border-slate-800 flex items-center justify-center bg-slate-50 dark:bg-slate-800/20"><span class="material-symbols-outlined text-orange-400">light_mode</span></div>
+<div class="w-12 h-14 border-r border-slate-200 dark:border-slate-800 flex items-center justify-center bg-slate-50 dark:bg-slate-800/20"><span class="material-symbols-outlined text-orange-400">light_mode</span></div>
+<div class="w-12 h-14 border-r border-slate-200 dark:border-slate-800 flex items-center justify-center"><span class="material-symbols-outlined text-indigo-400">dark_mode</span></div>
+<div class="w-12 h-14 border-r border-slate-200 dark:border-slate-800 flex items-center justify-center"><span class="material-symbols-outlined text-indigo-400">dark_mode</span></div>
+<div class="w-12 h-14 border-r border-slate-200 dark:border-slate-800 flex items-center justify-center"><span class="material-symbols-outlined text-indigo-400">dark_mode</span></div>
+</div>
+</div>
+<!-- Member Row 3 -->
+<div class="flex border-b border-slate-200 dark:border-slate-800 hover:bg-primary/5 transition-colors">
+<div class="w-32 sticky left-0 z-10 bg-background-light dark:bg-background-dark border-r border-slate-200 dark:border-slate-800 p-3 flex items-center gap-2">
+<div class="size-8 rounded-full bg-slate-300 dark:bg-slate-700 overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="Profile picture of Mike Johnson" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBOBhxmfF3R_m-DFRGe7FkzgybiDpyytgTnW2qroPizmreULXNor6Pn3mL_6i1D1rHtU3ncP2yAt-FGwg0OznsnD183i3kpvw6pvLRGfqMOu0YLhIQMzlJ9scFhdSF6Ere3iCl6kQxW83AlhLXcf1MzRxGRE8htM7KiqTbGGujrEBmgSiP0uSQhwG5vkWpmVkhN72Yxwivpp2mJdK44SEWXkQ4gAuudI2AKubI_7Jc0R3QN5xKrG1kl1xGgP_-Qw6gR3eToeNVyxWg"/>
+</div>
+<span class="text-xs font-semibold truncate">Mike Johnson</span>
+</div>
+<div class="flex">
+<div class="w-12 h-14 border-r border-slate-200 dark:border-slate-800 flex items-center justify-center"><span class="material-symbols-outlined text-slate-300">block</span></div>
+<div class="w-12 h-14 border-r border-slate-200 dark:border-slate-800 flex items-center justify-center"><span class="material-symbols-outlined text-orange-400">light_mode</span></div>
+<div class="w-12 h-14 border-r border-slate-200 dark:border-slate-800 flex items-center justify-center"><span class="material-symbols-outlined text-orange-400">light_mode</span></div>
+<div class="w-12 h-14 border-r border-slate-200 dark:border-slate-800 flex items-center justify-center"><span class="material-symbols-outlined text-orange-400">light_mode</span></div>
+<div class="w-12 h-14 border-r border-slate-200 dark:border-slate-800 flex items-center justify-center"><span class="material-symbols-outlined text-orange-400">light_mode</span></div>
+<div class="w-12 h-14 border-r border-slate-200 dark:border-slate-800 flex items-center justify-center bg-slate-50 dark:bg-slate-800/20"><span class="material-symbols-outlined text-slate-300">block</span></div>
+<div class="w-12 h-14 border-r border-slate-200 dark:border-slate-800 flex items-center justify-center bg-slate-50 dark:bg-slate-800/20"><span class="material-symbols-outlined text-indigo-400">dark_mode</span></div>
+<div class="w-12 h-14 border-r border-slate-200 dark:border-slate-800 flex items-center justify-center"><span class="material-symbols-outlined text-orange-400">light_mode</span></div>
+<div class="w-12 h-14 border-r border-slate-200 dark:border-slate-800 flex items-center justify-center"><span class="material-symbols-outlined text-orange-400">light_mode</span></div>
+<div class="w-12 h-14 border-r border-slate-200 dark:border-slate-800 flex items-center justify-center"><span class="material-symbols-outlined text-orange-400">light_mode</span></div>
+</div>
+</div>
+<!-- Member Row 4 -->
+<div class="flex border-b border-slate-200 dark:border-slate-800 hover:bg-primary/5 transition-colors">
+<div class="w-32 sticky left-0 z-10 bg-background-light dark:bg-background-dark border-r border-slate-200 dark:border-slate-800 p-3 flex items-center gap-2">
+<div class="size-8 rounded-full bg-slate-300 dark:bg-slate-700 overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="Profile picture of Emily Davis" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC_bDxHux9obFSer_IBg1uoXK9NqvLgGkMKN9P7eoW7BF-RIYWchbIPs0GP1p1vjsUyIPQ2qlUDKS_-0SzXcfNaDB-Krj98YKnOou1jTl65fCKO6yWQnoSMLL6noNSZ7U8mobtDXh34_Ofyq9Vn80XRuGxohkS6DW0VBQRSF_QQZx5OrP-g4iHYtQEGJXOuCU9ZsanHYWXJwI4uk41WicnjZ_8UgkKRsg7khhOXGYfiGWpjTDpvVOu97Ka7pob6O2p3MC6FJVhEITg"/>
+</div>
+<span class="text-xs font-semibold truncate">Emily Davis</span>
+</div>
+<div class="flex">
+<div class="w-12 h-14 border-r border-slate-200 dark:border-slate-800 flex items-center justify-center"><span class="material-symbols-outlined text-orange-400">light_mode</span></div>
+<div class="w-12 h-14 border-r border-slate-200 dark:border-slate-800 flex items-center justify-center"><span class="material-symbols-outlined text-slate-300">block</span></div>
+<div class="w-12 h-14 border-r border-slate-200 dark:border-slate-800 flex items-center justify-center"><span class="material-symbols-outlined text-indigo-400">dark_mode</span></div>
+<div class="w-12 h-14 border-r border-slate-200 dark:border-slate-800 flex items-center justify-center"><span class="material-symbols-outlined text-indigo-400">dark_mode</span></div>
+<div class="w-12 h-14 border-r border-slate-200 dark:border-slate-800 flex items-center justify-center"><span class="material-symbols-outlined text-slate-300">block</span></div>
+<div class="w-12 h-14 border-r border-slate-200 dark:border-slate-800 flex items-center justify-center bg-slate-50 dark:bg-slate-800/20"><span class="material-symbols-outlined text-indigo-400">dark_mode</span></div>
+<div class="w-12 h-14 border-r border-slate-200 dark:border-slate-800 flex items-center justify-center bg-slate-50 dark:bg-slate-800/20"><span class="material-symbols-outlined text-indigo-400">dark_mode</span></div>
+<div class="w-12 h-14 border-r border-slate-200 dark:border-slate-800 flex items-center justify-center"><span class="material-symbols-outlined text-orange-400">light_mode</span></div>
+<div class="w-12 h-14 border-r border-slate-200 dark:border-slate-800 flex items-center justify-center"><span class="material-symbols-outlined text-orange-400">light_mode</span></div>
+<div class="w-12 h-14 border-r border-slate-200 dark:border-slate-800 flex items-center justify-center"><span class="material-symbols-outlined text-slate-300">block</span></div>
+</div>
+</div>
+</div>
+</div>
+</main>
+<!-- Legend (Quick access) -->
+<div class="bg-background-light dark:bg-background-dark px-4 py-2 border-t border-slate-200 dark:border-slate-800 flex items-center justify-center gap-6">
+<div class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-orange-400 text-lg">light_mode</span>
+<span class="text-[10px] font-medium text-slate-600 dark:text-slate-400">Day</span>
+</div>
+<div class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-indigo-400 text-lg">dark_mode</span>
+<span class="text-[10px] font-medium text-slate-600 dark:text-slate-400">Night</span>
+</div>
+<div class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-slate-300 text-lg">block</span>
+<span class="text-[10px] font-medium text-slate-600 dark:text-slate-400">Off</span>
+</div>
+</div>
+<!-- Bottom Navigation Bar -->
+<nav class="bg-background-light dark:bg-background-dark border-t border-slate-200 dark:border-slate-800 px-4 pb-6 pt-2">
+<div class="flex items-center justify-around max-w-lg mx-auto">
+<a class="flex flex-col items-center gap-1 text-slate-400 dark:text-slate-500 hover:text-primary transition-colors" href="#">
+<span class="material-symbols-outlined">home</span>
+<span class="text-[10px] font-medium">Home</span>
+</a>
+<a class="flex flex-col items-center gap-1 text-primary" href="#">
+<span class="material-symbols-outlined">calendar_month</span>
+<span class="text-[10px] font-bold">Schedule</span>
+</a>
+<a class="flex flex-col items-center gap-1 text-slate-400 dark:text-slate-500 hover:text-primary transition-colors" href="#">
+<span class="material-symbols-outlined">group</span>
+<span class="text-[10px] font-medium">Team</span>
+</a>
+</div>
+</nav>
+</div>
+</body></html>
