@@ -22,3 +22,20 @@ export function isSameDay(a: Date, b: Date): boolean {
     a.getDate() === b.getDate()
   );
 }
+
+/** 日付文字列 YYYY-MM-DD の範囲で日付を順に生成 */
+export function* dateRange(startStr: string, endStr: string): Generator<string> {
+  const start = parseDateStr(startStr);
+  const end = parseDateStr(endStr);
+  const cur = new Date(start.getTime());
+  while (cur <= end) {
+    yield formatDateForInput(cur);
+    cur.setDate(cur.getDate() + 1);
+  }
+}
+
+/** 短いラベル（例: 2/1(土)） */
+export function formatDateShort(d: Date): string {
+  const w = ['日', '月', '火', '水', '木', '金', '土'];
+  return `${d.getMonth() + 1}/${d.getDate()}（${w[d.getDay()]}）`;
+}

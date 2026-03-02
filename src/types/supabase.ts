@@ -8,6 +8,9 @@ export interface ShiftRow {
   start: string;
   end: string;
   memo: string | null;
-  group_id?: string | null;  // グループ連携用（マイグレーション 20260303000000 で追加）
+  group_id?: string | null;
+  period_id?: string | null;
+  type?: string | null;
+  status?: string | null;
   created_at?: string;
 }

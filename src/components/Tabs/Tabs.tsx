@@ -1,4 +1,4 @@
-export type TabId = 'calendar' | 'register' | 'list' | 'members';
+export type TabId = 'calendar' | 'register' | 'list' | 'confirmed' | 'members';
 
 interface TabItem {
   id: TabId;
@@ -7,8 +7,9 @@ interface TabItem {
 
 const defaultTabs: TabItem[] = [
   { id: 'calendar', label: 'カレンダー' },
-  { id: 'register', label: '登録' },
+  { id: 'register', label: '提出' },
   { id: 'list', label: 'マイシフト' },
+  { id: 'confirmed', label: '確定シフト' },
   { id: 'members', label: 'メンバー' },
 ];
 

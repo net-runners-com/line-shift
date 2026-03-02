@@ -363,3 +363,82 @@ body {
   font-size: 0.8rem;
   color: var(--danger);
 }
+
+/* Period selector */
+.period-selector .period-empty {
+  margin-bottom: 12px;
+  color: var(--text-muted);
+  font-size: 0.9rem;
+}
+
+.period-cards {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-bottom: 12px;
+}
+
+.period-card {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px;
+  padding: 12px;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  background: var(--bg);
+  text-align: left;
+  cursor: pointer;
+  font-size: 0.9rem;
+}
+
+.period-card--selected {
+  border-color: var(--primary);
+  background: rgba(6, 199, 85, 0.08);
+}
+
+.period-card-label { font-weight: 600; }
+.period-card-dates { color: var(--text-muted); }
+.period-card-deadline { font-size: 0.8rem; color: var(--text-muted); }
+.period-card-action { margin-left: auto; font-size: 0.8rem; color: var(--primary); }
+
+.period-create-btn { margin-top: 8px; }
+
+/* Period register */
+.period-register .period-dates { font-size: 0.9rem; color: var(--text-muted); margin-bottom: 12px; }
+.period-register .period-submitted-msg { color: var(--primary); margin-bottom: 8px; }
+.period-actions { display: flex; flex-wrap: wrap; gap: 8px; align-items: flex-end; margin-bottom: 12px; }
+.period-actions .form-group { margin-bottom: 0; min-width: 120px; }
+.period-summary { font-weight: 600; margin-bottom: 12px; }
+.period-shift-list { max-height: 240px; overflow-y: auto; }
+.period-submit-btn { margin-top: 12px; width: 100%; }
+
+/* Modal */
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.4);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 100;
+  padding: 16px;
+}
+
+.modal {
+  background: var(--surface);
+  border-radius: 12px;
+  padding: 20px;
+  max-width: 360px;
+  width: 100%;
+  max-height: 90vh;
+  overflow-y: auto;
+}
+
+.modal-actions {
+  display: flex;
+  gap: 12px;
+  margin-top: 16px;
+}
+
+.modal-actions .btn { flex: 1; }
