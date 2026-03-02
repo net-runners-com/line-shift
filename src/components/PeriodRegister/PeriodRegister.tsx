@@ -5,7 +5,7 @@
 import { useState, useCallback } from 'react';
 import type { Shift, ShiftPeriod } from '@/types/shift';
 import { formatDateJa, formatDateShort, parseDateStr, dateRange } from '@/utils/date';
-import { addShiftsBulk, deleteDraftShiftsInPeriod, submitPeriod, hasSubmittedPeriod, getShifts } from '@/services/shiftStorage';
+import { addShiftsBulk, deleteDraftShiftsInPeriod, submitPeriod, getShifts } from '@/services/shiftStorage';
 
 const PATTERNS: { label: string; start: string; end: string }[] = [
   { label: '10:00～18:00', start: '10:00', end: '18:00' },
@@ -22,7 +22,6 @@ interface PeriodRegisterProps {
   submitted: boolean;
   onRefresh: () => void;
   onDeleteShift: (id: string) => void;
-  onAddOneShift?: (data: { date: string; start: string; end: string; type: 'work' | 'day_off' }) => Promise<void>;
 }
 
 export function PeriodRegister({
@@ -34,10 +33,8 @@ export function PeriodRegister({
   submitted,
   onRefresh,
   onDeleteShift,
-  onAddOneShift,
 }: PeriodRegisterProps) {
   const [batchPattern, setBatchPattern] = useState(PATTERNS[0]);
-  const [batchDates, setBatchDates] = useState<string[]>([]);
   const [submitting, setSubmitting] = useState(false);
   const [deleting, setDeleting] = useState(false);
 
@@ -56,7 +53,7 @@ export function PeriodRegister({
     try {
       await addShiftsBulk(lineUserId, items, groupId, period.id, 'work');
       onRefresh();
-      setBatchDates([]);    } finally {
+    } finally {
       setSubmitting(false);
     }
   }, [period, batchPattern, lineUserId, groupId, onRefresh]);
